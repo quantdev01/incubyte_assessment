@@ -2,11 +2,15 @@ class StringCalculator{
   int add(String numbers){
     if (numbers == '') return 0;
     if (numbers.length == 1) return 1;
-    
+    if (numbers.length > 1 && numbers[0] == '/' && numbers[1] == '/'){
+      String newListNumbers = numbers.substring(3);
+      List<String> listStrings = newListNumbers.split(numbers[2]);
+      List<int> stringToInt = listStrings.map(int.parse).toList();
+      return sum(stringToInt);
+    }
     List<String> listStrings = numbers.split(RegExp(r'[, \n]+'));
     List<int> stringToInt = listStrings.map(int.parse).toList();
     return sum(stringToInt);
-    
   }
 }
 
