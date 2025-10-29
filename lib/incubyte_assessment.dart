@@ -3,9 +3,10 @@ class StringCalculator{
     if (numbers == '') return 0;
     if (numbers.length == 1) return 1;
     
-    List<int> listNumbers = numbers.split(',') as List<int>;
+    List<String> listStrings = numbers.split(',');
+    List<int> stringToInt = listStrings.map(int.parse).toList();
 
-    return sum(listNumbers);
+    return sum(stringToInt);
 
 
   }
