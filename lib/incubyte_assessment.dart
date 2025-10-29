@@ -5,10 +5,8 @@ class StringCalculator{
     
     List<String> listStrings = numbers.split(RegExp(r'[, \n]+'));
     List<int> stringToInt = listStrings.map(int.parse).toList();
-
     return sum(stringToInt);
-
-
+    
   }
 }
 

@@ -31,5 +31,12 @@ void main(){
       });
 
     });
+
+    group('4. Support different delimiters/', (){
+      final stringCalculator = StringCalculator();
+      test('Support different delimiters', (){
+        expect(stringCalculator.add("//;\n1;2"), 3);
+      });
+    });
   });
 }
