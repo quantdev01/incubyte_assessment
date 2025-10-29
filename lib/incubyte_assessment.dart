@@ -1,3 +1,21 @@
-int add(){
-  return 2+2;
+class StringCalculator{
+  int add(String numbers){
+    if (numbers == '') return 0;
+    if (numbers.length == 1) return 1;
+    
+    List<int> listNumbers = numbers.split(',') as List<int>;
+
+    return sum(listNumbers);
+
+
+  }
+}
+
+int sum(List myList){
+  int sum = 0;
+  for (int i=0; i < myList.length; i++){
+    sum = sum + myList[i] as int;
+
+  }
+  return sum;
 }
