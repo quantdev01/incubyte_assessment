@@ -6,13 +6,24 @@ class StringCalculator{
       String newListNumbers = numbers.substring(3);
       List<String> listStrings = newListNumbers.split(numbers[2]);
       List<int> stringToInt = listStrings.map(int.parse).toList();
+      negativesNotAllowed(stringToInt);
       return sum(stringToInt);
     }
     List<String> listStrings = numbers.split(RegExp(r'[, \n]+'));
     List<int> stringToInt = listStrings.map(int.parse).toList();
+    negativesNotAllowed(stringToInt);
     return sum(stringToInt);
   }
 }
+
+void negativesNotAllowed(List<int> myList){
+  for (int i=0; i < myList.length; i++){
+    if (myList[i] < 0){
+      throw 'negatives not allowed';
+    }
+  }
+}
+
 
 int sum(List myList){
   int sum = 0;
