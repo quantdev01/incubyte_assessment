@@ -3,7 +3,7 @@ import 'package:myapp/incubyte_assessment.dart';
 
 void main(){
   group('String Calculator', (){
-    group('1. Tests', (){
+    group('1. Tests/', (){
       final stringCalculator = StringCalculator();
       test('Empty String', (){
         expect(stringCalculator.add(""), 0);
@@ -13,9 +13,23 @@ void main(){
       });
       test('2 Numbers ', (){
         expect(stringCalculator.add('1,1'), 2);
+      });      
+      
+    });
+
+    group('2. Allow the Add method to handle Unkown numbers/', (){
+      final stringCalculator = StringCalculator();
+      test('Unkown amount of numbers', (){
+        expect(stringCalculator.add('1,1,1,1,1,1,1,1,1,1'), 10);
       });
-      
-      
+    });
+
+    group('3. Allow the Add Method to hanle new lines between numbers/', (){
+      final stringCalculator = StringCalculator();
+      test('New lines between numbers', (){
+        expect(stringCalculator.add('1\n2,3'), 6);
+      });
+
     });
   });
 }
