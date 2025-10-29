@@ -38,5 +38,13 @@ void main(){
         expect(stringCalculator.add("//;\n1;2"), 3);
       });
     });
+
+    group('5. Negative numbers not allowed/', (){
+      final stringCalculator = StringCalculator();
+      
+      test('Negative numbers not allowed', (){
+        expect(() => stringCalculator.add('-1,2'), throwsA('negatives not allowed'));
+      });
+    });
   });
 }
