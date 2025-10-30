@@ -41,9 +41,18 @@ void main(){
 
     group('5. Negative numbers not allowed/', (){
       final stringCalculator = StringCalculator();
-      
+      String myString = "-1,2,3,-4";
+
+
       test('Negative numbers not allowed', (){
-        expect(() => stringCalculator.add('-1,2'), throwsA('negatives not allowed'));
+        expect(() => stringCalculator.add(myString), throwsA(predicate(
+          (e){
+            print('$e');
+            return e.toString().contains('negative not allowed')  &&
+                    e.toString().contains('-1') &&
+                    e.toString().contains('-4');
+          }
+        )));
       });
     });
   });

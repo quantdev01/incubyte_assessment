@@ -19,7 +19,7 @@ class StringCalculator{
 void negativesNotAllowed(List<int> myList){
   for (int i=0; i < myList.length; i++){
     if (myList[i] < 0){
-      throw 'negatives not allowed';
+      throw Exception('negatives not allowed ${myList[i]}');
     }
   }
 }
