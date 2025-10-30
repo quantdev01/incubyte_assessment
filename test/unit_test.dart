@@ -39,7 +39,7 @@ void main(){
       });
     });
 
-    group('5. Negative numbers not allowed/', (){
+    group('5-6. Negative numbers not allowed/', (){
       final stringCalculator = StringCalculator();
       String myString = "-1,2,3,-4";
 
