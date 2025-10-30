@@ -47,8 +47,7 @@ void main(){
       test('Negative numbers not allowed', (){
         expect(() => stringCalculator.add(myString), throwsA(predicate(
           (e){
-            print('$e');
-            return e.toString().contains('negative not allowed')  &&
+            return e.toString().contains('negatives not allowed')  &&
                     e.toString().contains('-1') &&
                     e.toString().contains('-4');
           }

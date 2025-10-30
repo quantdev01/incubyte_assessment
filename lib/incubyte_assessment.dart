@@ -17,10 +17,14 @@ class StringCalculator{
 }
 
 void negativesNotAllowed(List<int> myList){
+  List<int> negatives = [];
   for (int i=0; i < myList.length; i++){
     if (myList[i] < 0){
-      throw Exception('negatives not allowed ${myList[i]}');
+      negatives.add(myList[i]);
     }
+  }
+  if (negatives.isNotEmpty){
+    throw Exception('negatives not allowed: $negatives');
   }
 }
 
@@ -29,7 +33,6 @@ int sum(List myList){
   int sum = 0;
   for (int i=0; i < myList.length; i++){
     sum = sum + myList[i] as int;
-
   }
   return sum;
 }
